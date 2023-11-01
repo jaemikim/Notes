@@ -1,0 +1,74 @@
+1. 클래스 설계 방법
+  1) 여러 개의 클래스를 가지고 클래스와 클래스를 설계
+  2) 수평적 구조로 설계
+    - 설계시 비슷한 클래스의 경우 중복적인 속성이 발생함
+    - 코드의 중복이 발생
+    - 새로운 요구사항 발생시 반영이 어려움(유지보수가 어렵다.)
+  3) 수직적 구조로 설계
+    - 확장(상속)
+    - 코드의 중복부분 최소화
+    - 게층화
+    - 상속 (inheritance)
+
+  Employee
+  name, age, phone, addr, empDate, dept 
+     /|\ 
+      | extends : 부모가 자식들에게 자신의 것을 사용하라고 허락해주는 것
+     /|\
+  - RegularEmpDTO 
+  - MEmpDTO : mdept
+  - SEmpDTO : senior
+  - DEmpDTO : period
+
+2. 클래스 계층화 사용(상속)
+  1) 상속 관계
+  2) is a kind of 사원
+    - 일반사원 is a kind of 사원
+    - 관리사원 is a kind of 사원
+    - 비서사원 is a kind of 사원
+    - 일용직사원 is a kind of 사원
+  3) 객체를 수직적인 구조로 설계
+  4) 코드의 중복을 최소화
+  5) 새로운 요구사항 발생이 반영이 쉬움 (유지보수가 쉬움)
+  6) 확장성이 좋아짐
+
+    Circle circle = new Circle();
+            --------------------------------------------
+   circle   | color, draw()            | Shape   ^ ^ extends
+            --------------------------------------------- Circle
+            | center, radius, draw()   | Circle  ^ ^
+            --------------------------------------------- 
+
+  super class                          
+  상위 클래스           Employee  일반화, 추상화, 개념화, 포괄적 
+  부모 클래스              /\
+                          || 
+                          ||     extends 상속, 확장
+                          || 
+  sub class               ||
+  하위 클래스         RegularEmpDTO  구체화, 세분화, 
+  자식 클래스         
+  파생 클래스 
+
+3. 클래스 상속 
+  1) 새로운 클래스를 정의 할 때 이미 구현된 클래스를 상속(inheritance) 받아서 속석이나 기능을 확장하여 클래스를 구현함
+  2) 이미 구현된 클래스보다 더 구체적인 기능을 가진 클래스를 구현해야 할때 기존 클래스를 상속함   
+  3) 상속하는 클래스 
+    - 상위 클래스, parent class, base class, super class
+     상속받는 클래스
+     - 하위 클래스, child class, derived class, sub class
+  4) 상속의 문법 
+    - class B extends A {
+
+    }
+    - extends 키워드 뒤에서는 단 하ㅏ의 클래스만 올 수 있음 
+    - 자바는 단일 상속(single inheritance)만을 지원함
+
+  5) 상속을 하는 경우
+    - 상위 클래스는 하위 클래스보다 더 일반적인 개념과 기능을 가짐
+    - 하위 클래스는 상위 클래스보다 더 구체적인 개념과 기능을 가짐
+    - 하위 클래스가 상위 클래스보다 속성과 기능을 확장(extends)한다는 의미
+
+
+이서, 해서 관계
+.class는 코드일 뿐이다. 

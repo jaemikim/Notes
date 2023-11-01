@@ -1,0 +1,75 @@
+-- 부서명이 지원팀인 직원의 사원번호, 사원명, 부서코드, 부서명을 출력하시오.  (양쪽에 있는 IN JOIN)
+
+SELECT A.EMP_NO, A.EMP_NM, B.DEPT_CD, B.DEPT_NM 
+FROM TB_EMP A, TB_DEPT B
+WHERE A.DEPT_CD = B.DEPT_CD 
+AND B.DEPT_NM = '지원팀'
+;
+
+-- 부서명이 지원팀인 직원의 사원번호, 사원명, 부서코드, 부서명, 보유자격증 코드을 출력하시오. 
+
+SELECT 
+	A.EMP_NO
+	, A.EMP_NM
+	, B.DEPT_CD 
+	, B.DEPT_NM
+	, C.CERTI_CD 
+FROM TB_EMP A
+	, TB_DEPT B
+	, TB_EMP_CERTI C
+WHERE A.DEPT_CD = B.DEPT_CD 
+AND A.EMP_NO = C.EMP_NO
+AND B.DEPT_NM = '지원팀'
+;
+
+-- 부서명이 지원팀인 직원의 사원번호, 사원명, 부서코드, 부서명, 보유자격증 코드 및 자격증명을 출력하시오. 
+SELECT 
+	A.EMP_NO
+	, A.EMP_NM
+	, B.DEPT_CD 
+	, B.DEPT_NM
+	, C.CERTI_CD
+	, D.CERTI_NM 
+FROM TB_EMP A
+	, TB_DEPT B
+	, TB_EMP_CERTI C
+	, TB_CERTI D 
+WHERE A.DEPT_CD = B.DEPT_CD 
+AND A.EMP_NO = C.EMP_NO
+AND C.CERTI_CD = D.CERTI_CD 
+AND B.DEPT_NM = '지원팀'
+;
+
+-- INNER JOIN
+-- 주소가 수원인 직원의 사원번호, 사원명, 주소, 부서코드, 부서명을 출력하시오.
+
+SELECT A.EMP_NO, A.EMP_NM, A.ADDR, B.DEPT_CD, B.DEPT_NM 
+FROM TB_EMP A, TB_DEPT B
+WHERE A.DEPT_CD = B.DEPT_CD 
+AND A.ADDR LIKE '%수원%'
+ORDER BY A.EMP_NO 
+;
+
+-- NATURAL JOIN
+-- 주소가 수원인 직원의 사원번호, 사원명, 주소, 부서코드, 부서명을 출력하시오. (DEPT_CD 공통들어가는 )
+SELECT A.EMP_NO, A.EMP_NM, A.ADDR, DEPT_CD, B.DEPT_NM 
+FROM TB_EMP A NATURAL JOIN TB_DEPT B
+WHERE A.ADDR LIKE '%수원%'
+;
+
+
+-- USING 절 ()
+-- USING 절에 두테이블이 공통적으로 가지고 있는 DEPT_CD 컬럼을 기재함
+-- 주소가 수원인 직원의 사원번호, 사원명, 주소, 부서코드, 부서명을 출력하시오.
+SELECT A.EMP_NO, A.EMP_NM, A.ADDR, DEPT_CD, B.DEPT_NM 
+FROM TB_EMP A JOIN TB_DEPT B USING (DEPT_CD)
+WHERE A.ADDR LIKE '%수원%'
+;
+
+-- ON 조건 절
+-- 주소가 수원인 직원의 사원번호, 사원명, 주소, 부서코드, 부서명을 출력하시오.
+SELECT A.EMP_NO, A.EMP_NM, A.ADDR, B.DEPT_CD, B.DEPT_NM 
+FROM TB_EMP A JOIN TB_DEPT B ON (A.DEPT_CD = B.DEPT_CD)
+WHERE A.ADDR LIKE '%수원%'
+;
+

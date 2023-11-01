@@ -1,0 +1,157 @@
+1. 프로그래밍
+  1) 컴퓨터가 일을 수행하도록 프로그래밍 언어로 명령어 집합(프로그램)을 만드는 일
+
+2. 컴파일, 컴파일러 
+  1) 컴파일 (compile)
+    - 프로그래밍 언어를 컴퓨터가 실행 가능한 기계어로 만드는 일
+  2) 컴파일러 (compiler)
+    - 기계어로 바꾸어 주는 프로그램
+    - 예) java 컴파일러, gcc 컴파일러
+
+3. 자바 프로그래밍
+  1) 자바 역사
+    - 1991년 제임스 고슬링을 비롯한 썬 마이크로 시스템스 연구원들이 처음 개발
+    - 가전, 휴대용 장치에 사용되는 소프트웨어 언어로 개발됨, 안정성이 중요
+    - 2006년 11월 썬 마이크로시스템즈는 대부분은 자바를 GPL 라이선스로 소스를 오픈 함
+    - 2009년 4월 오라클과 인수 합병됨
+      ㆍ 자바에 대한 권리 및 유지보수 또한 오라클로 넘어감
+  2) 자바 플랫폼(자바 언어로 만들 수 있는 프로그램의 유형)
+    - 플랫폼(platform)
+      ㆍ자바 언어로 작성된 프로그램이 실행되는 특정한 환경
+    - Java Platform, Standard Edition (Java SE)
+      ㆍ데스크톱 응용소프트웨어 : Java 플랫폼을 구축 해야 함
+    - Java Platform, Enterprise Edition (Java EE) (Jakarta EE)
+      ㆍ웹 기반 응용소프트웨어 : JavaEE 플랫폼 구축 해야 함
+    - Java Embedded
+      ㆍ모바일 기반 응용소프트웨어 : Java Embedded 구축 해야 함
+
+4. 자바 개발도구 설치 (JDK)
+  1) 자바 개발 키트(Java Development Kit, JDK) 11 설치
+    - 자바 기반의 개발환경에서 가장 기본이 되는 소프트웨어
+  2) Java 언어 : 100% 무료
+  3) JDK
+    - 유료 버전의 Oracle JDK 
+      ㆍBCL(Binary Code License) : 개인적으로 사용하는 경우 무료.
+      ㆍ구독형 라이선스 : 일정기간 추가로 요금 지불
+    - 무료 버전의 OpenJDK
+      ㆍ성능이나 안정성에 다소 문제가 있었지만 Java 11부터는 OracleJDK와 거의 동일해짐.
+  4) 내PC -> 속성 -> 고급 시스템 설정 -> 환경 변수 
+    - JAVA_HOME, C:\Program Files\Java\jdk-11.0.20.1+1
+    - Path, %JAVA_HOME%\bin
+    - JAVA_HOME을 환경변수로 추가하고, Path에 JDK 설치 폴더에 있는 bin까지의 경로를 등록함
+  5) API (Application Programming Interface)
+    - 자바에서 제공해주는 클래스들의 집합임.
+  6) JVM(Java Virtual Machine)
+    - 자바 프로그램을 실행해주는 프로세서(엔진)
+  7) JavaSE 개발 환경이 구축 됨
+    - JVM, API, TOOL(명령어)이 PC에 설치가 되었다는 의미.
+    - 자바언어로 데스크톱 응용소프트웨어를 개발할수 있음.
+
+5. JavaSE 프로젝트 구조
+  1) 소스파일은 .java로 저장함
+  2) 실행가능한 파일은 .class로 만들어짐 (byte code)
+
+6. JVM과 자바의 구동방식
+  1) javac로 1차 컴파일을 하면 bytecode (.class)를 자신의 OS에 맞게 
+  2) 한번더 컴파일하여(2차) 실행파일을 (.exe) 메모리에 로딩하여 실행
+    - bytecode (중간어코드)
+     ㆍ어떤 OS에서 실행 할지 모르기 때문에 확실하게 exe코드를 만들지 못하고 중간단계격으로 만들어 놓음
+    - JVM이 알아서 실행함
+  3) 플랫폼(OS) 독립적인 개발이 가능함
+  4) 자동으로 메모리를 관리해줌
+
+7. 자바 프로그래밍의 특징
+  1) 플랫폼에 영향을 받지 않으므로 다양한 환경에서 사용할수 있음.
+        자바 소스 코드 (Hello.java)
+               \|/
+            자바컴파일러
+               \|/
+          바이트 코드(Hello.class)
+          |                     |
+         \|/                   \|/
+      윈도우 JVM              리눅스 JVM
+        \|/                     \|/
+      윈도우에서 실행          리눅스에서 실행
+  2) 객체 지향 언어(OOP)이기 때문에 유지보스가 쉽고 확장성 좋음
+  3) 프로그램이 안정적임
+  4) 풍부한 기능이 제공되는 오픈 소스임
+
+8. 자바를 활용한 프로그래밍
+  1) 웹 애플리케이션 구현
+  2) 안드로이드 프로그래밍
+  3) 게임 프로그래밍
+
+9. 훈련해야 할 내용
+  1) 자바 언어 익히기 (문법)
+  2) 객체지향 프로그래밍 개념 익히고 자바로 구현
+  3) 자바구조 이해하고 구현하기 
+  4) 자바 언어로 문제 해결하기 
+
+10. IDE (Integrated Development Environment) 개발도구 설치
+  1) Eclipse(이클립스)
+  2) Intellij(인텔리제이)
+
+
+****** Java SE 11 -version으로 사용한다. 
+
+앞으로 수업내용을 공유함 매주 금요일 (그주에 수업이 진행된)
+https://github.com/javabasedapplicationsw/EducationalMaterials
+
+위 접속후 Wiki 메뉴에 접속 해서 java url 확인
+
+오픈소스에서 이름을 변형 자카르타 EE로 사용한다. (java) 
+
+****adoptium 으로 검색해서 접속
+- https://adoptium.net/ 
+- Other platforms and versions 버튼 클릭 후 이동
+windows, x64, JDK,  11-LTS를 선택해서 다운로드 
+다운 받은 OpenJDK11U- jdk_x64_windows_hotspot_11.0.20.1_1.zip
+
+다운 받아서 압축해제후 
+C:\Program Files\Java  java폴더 생성 후  
+***OpenJDK11U-jdk_x64_windows_hotspot_11.0.20.1_1.zip 파일을 압축해지해서 넣어 준다.
+
+azul 환경변수 테스트 용도로 다운
+https://www.azul.com/downloads/?package=jdk#zulu
+
+jdk-11.0.20.1+1 - 하위 폴더에 보면 여러가지 폴더가 있는데 그중에 bin, lib은 
+ > bin - tool이 있다.
+ > lib - API가 있다
+
+JDK(자바개발환경- java, javac/자바컴파일러) <- JRE (자바실행환경 java, javaw, library(API))-(JDK에 포함) <- JVM(자바가상머신) JIT컴파일러 - (JRE에 포함)
+
+****https://www.oracle.com/java/technologies/downloads/
+좌측 하단에 다운로드 Documentation download 클릭해서 페이지 이동
+jdk-20.0.2_doc-all.zip 파일을 다운 받는다 - jdk doc문서로 참고 용도로 사용한다.(압축풀어서 내용 확인)
+ 
+
+****eclipse 검색
+https://www.eclipse.org/downloads/
+
+페이지에서 Download Packages 클릭 페이지 이동 해서 
+Eclipse IDE for Java Developers 다운받는다 (Windows x86_64 선택)
+eclipse-java-2023-06-R-win32-x86_64.zip 
+
+****jetbrains 검색
+https://www.jetbrains.com/
+
+Developer Tools 메뉴 선택
+IntelliJ IDEA 선택 들어가서 우측에 다운로드 클릭 페이지 이동
+하단 페이지로 이동
+IntelliJ IDEA Community Edition을 다운받는다. (.exe 파일을 다운로드)
+
+auto
+
+src선택 alt키 + insert키 선택 해서 패키지, 자바 파일을 생성한다. 
+ctrl + shift + F10 실행된다.
+
+git push -u origin main
+
+
+
+java > installed JREs > add로 선택 추가 방식
+
+
+보낼때 엔코딩 받을 때 디코딩
+
+enc - 인코딩 확인후 변경

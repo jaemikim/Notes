@@ -1,0 +1,90 @@
+1. 오라클 설치 전 체크 사항
+  1) 오라클 설치 전 가급적 윈도우즈 운영체제를 재설치 함
+    - 재설치는 반드시 필요한 것은 아니지만 오라클 설치 실패 확률은 많이 낮춰 줌
+  2) 오라클 설치 도중 실패를 한다면 윈도우즈 10 운영체제를 재설치 한 후 그 후 다시 오라클 설치 시도함
+  3) 자신의 PC 사용자 계정명을 영문으로 변경해야 함
+    - 제어판 -> 사용자 계정
+  4) 윈도우 키 + R -> netplwiz 실행
+    - 사용자 이름 및 전체 이름이 한글로 되어 있으면 영문으로 바꿈
+  5) 각종 보안 프로그램을 반드시 종료함
+  6) 윈도우 키 + R -> services.msc 실행
+    - 서비스 체크
+
+2. 오라클 XE 설치
+  1) 반드시 설치 실행 파일을 관리자 권한으로 실행함
+
+3. 오라클 XE 설치
+  1) 윈도우 키 + R -> services.msc 실행
+    - 오라클 관련 서비스 제대로 실행되고 있는지 확인
+
+4. 리스너 정상 구동 확인
+ 1) 윈도우 키 + S -> cmd -> 관리자 권한 실행 
+ 2) lsnrctl status 
+  - 현재 PC의 호스트명 : DESKTOP-1MBMNUV
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=DESKTOP-1MBMNUV)(PORT=1521)))
+  - 서비스명 : XE   
+  ("XE" 서비스)`
+  - 비번 : 0305
+
+
+5. SQL*Plus 이용한 오라클 접속
+  1) 윈도우 키 + S -> cmd -> 관리자 권한 실행 
+  2) SQLPLUS "/AS SYSDBA"
+     SELECT DUMMY FROM DUAL; 자체 제공하는 테이블
+  3) D: - enter
+     D:\>cd D:\workspace-sql\sample-database
+     D:\workspace-sql\sample-database>dir
+     D:\workspace-sql\sample-database>SQLPLUS OT/0305
+
+사용 예)
+  SQL> @ot_schema.sql - enter
+  SQL> ALTER SESSION SET NLS_LANGUAGE = 'AMERICAN'; - enter
+  Session altered.
+  SQL> ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-RR';  - enter
+  Session altered.
+  SQL> @ot_data.sql  - enter
+  SQL> select count(*) from contacts;
+    COUNT(*)
+  ----------
+         319      <---- contacts 갯수를 파악
+       
+  사용예)
+    D:\workspace-sql>sqlplus hm/0305
+
+    SQL*Plus: Release 18.0.0.0.0 - Production on 금 10월 27 10:24:15 2023
+    Version 18.4.0.0.0
+
+    Copyright (c) 1982, 2018, Oracle.  All rights reserved.
+
+    마지막 성공한 로그인 시간: 금 10월 27 2023 09:50:57 +09:00
+
+    다음에 접속됨:
+    Oracle Database 18c Express Edition Release 18.0.0.0.0 - Production
+    Version 18.4.0.0.0
+
+    SQL> host dir
+    D 드라이브의 볼륨에는 이름이 없습니다.
+    볼륨 일련 번호: 12A8-BF77
+
+    D:\workspace-sql 디렉터리
+
+    2023-10-27  오전 10:15    <DIR>          .
+    2023-10-27  오전 10:15    <DIR>          ..
+    2023-10-26  오후 06:17           525,648 hm_sample_database.sql
+    2023-10-24  오후 12:22             1,386 query1.sql
+    2023-10-25  오전 09:44             1,386 query2.sql
+    2023-10-26  오후 02:58             7,101 query3.sql
+    2023-10-26  오전 11:12               378 query4.sql
+    2023-10-25  오전 09:22    <DIR>          sample-database
+                  5개 파일             535,899 바이트
+                  3개 디렉터리  77,838,200,832 바이트 남음
+    SQL> @hm_sample_database.sql   <--- 테이블 생성
+
+6. DBeaver를 이용한 오라클 접속
+  1) C:\app\pc777\product\18.0.0\dbhomeXE\network\admin\listener.ora
+  2) SQL 작성 후 Ctrl + enter 키를 누르면 실행됨
+  
+    
+ORACLE_SAMPLE_ERD
+
+
