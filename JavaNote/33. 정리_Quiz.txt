@@ -122,6 +122,6 @@
 
 extends 상속 실선
 실선
-implements 실선
+ 실선
 
 ArrayList 동적으로 확장을 해준다. 

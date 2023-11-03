@@ -11,7 +11,7 @@ INSERT INTO TB_DEPT VALUES ('100015', '포스트코로나팀', '999999');
 COMMIT;
 
 -- 참조 무결성 제약 조건(FK) 잠시 DROP
--- '000000'이라는 없는 부서에 
+-- '000000'이라는 없는 부서에 데이터를 INSERT가 되게 하기 위해 하는 것임.
 ALTER TABLE HM.TB_EMP DROP CONSTRAINT FK_TB_EMP01;
 
 -- 부서명 없는 곳(존재하지)에 직원을 만들기
