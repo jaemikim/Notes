@@ -80,3 +80,18 @@
 
     - server.xml
       -  name="himedia_myoracle"
+
+4. 간단한 쿼리 작성
+  1) Statement : 인파라미터가 없는 정적 쿼리를 처리할 때 사용
+     PreparedStatement : 인파라미터가 있는 동적 쿼리를 처리할 때 사용
+     CallableStatement : 프로시저나 함수를 호출할 때 사용
+  2) 인파라미터
+    - 미리 작성해둔 쿼리문에서 일부 값을 나중에 결정할 수 있게 해주는 매개변수
+    - 쿼리문에서 물음표(?)로 표현함
+  3)  쿼리문 실행하는 메서드 
+    - executeUpdate()
+      ㆍINSERT, UPDATE, DELETE쿼리문 실행할 때 사용
+      ㆍ실행 후 영향 받은 행의 개수가 int 타입으로 반환됨   
+    - ResultSet executeQuery()
+      ㆍSELECT 쿼리문 실행할 때 사용
+      ㆍ조회한 레코드들의 집합인 ResultSet 객체를 반환함
