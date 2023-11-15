@@ -26,6 +26,8 @@
   ("XE" 서비스)`
   - 비번 : 0305
 
+  새로 설치 DESKTOP-1GQAA06
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=DESKTOP-1GQAA06)(PORT=1521)))
 
 5. SQL*Plus 이용한 오라클 접속
   1) 윈도우 키 + S -> cmd -> 관리자 권한 실행 
