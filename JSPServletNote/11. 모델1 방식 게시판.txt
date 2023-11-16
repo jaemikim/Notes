@@ -40,4 +40,6 @@
     - 목록 보기 화면 (lis.jsp)  
     - DAO (BoardDAO.java)
     - DB (BOARD)
-    
+  2) 게시물 검색하기
+    - 검색 항목(searchField)과 검색어(searchWord)가 주소표시줄 뒷부분에 쿼리스트링을 통해 전송된게 됨  
+4. 
