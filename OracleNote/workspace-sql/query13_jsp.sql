@@ -137,3 +137,57 @@ WHERE b.num = 1;
 
 UPDATE BOARD SET VISITCOUNT = VISITCOUNT + 1
 WHERE num = 7;
+
+
+SELECT * FROM BOARD;
+
+UPDATE BOARD SET TITLE = '홍게 무제한 메뉴', CONTENT = '홍게 + 홍게 라면 + 홍게주먹밥 무제한 음식이네요'
+WHERE NUM = 8
+;
+
+
+DELETE FROM BOARD WHERE num = 7;
+ROLLBACK;
+
+
+-- rownum
+SELECT ID, PASS , rownum FROM MEMBER;
+SELECT NUM, TITLE, rownum FROM BOARD;
+
+SELECT * FROM BOARD ORDER BY num DESC
+;
+
+SELECT A.*, rownum rNum 
+FROM (
+	SELECT * FROM BOARD ORDER BY num DESC 
+) A
+;
+
+SELECT *
+FROM (
+	SELECT A.*, rownum rNum 
+	FROM (
+		SELECT * FROM BOARD ORDER BY num DESC 
+	) A
+) 
+WHERE rNum BETWEEN 1 AND 10 
+;
+
+SELECT * FROM (
+		SELECT A.*, rownum rNum FROM (
+		SELECT * FROM  BOARD 
+		
+		ORDER BY num DESC
+		) A
+)
+WHERE rNum BETWEEN  1 AND 10
+;
+
+
+
+
+
+
+
+
+
