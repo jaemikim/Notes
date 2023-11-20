@@ -1,0 +1,33 @@
+1. 표현 언어(Expression Language)
+  1) 변수의 값을 출력할 때 사용하는 스크립트 언어임
+  2) JSP 내장 객체의 영역에 담긴 속성 사용할 수 있음
+  3) 산술, 비교, 논리연산 사용 가능
+  4) EL은 HTML, CSS, JS 어디에서든 사용 가능
+  5) 액션 태그나 JSTL의 속성갑으로도 사용 가능
+  6) JSP 스크립트 요소(선언부, 표현식, 스크립틀릿)에서는 사용 불가
+
+2. 기본 사용법
+  ${ 속성 }
+    - 영역에 저장된 속성을 뜻함
+    - 반드시 영역에 저장 후 사용해야 함
+      ㆍex) ${ reqeustScope.saveVar }
+
+3. EL에서 4가지 영역 접근하기 위한 내장 객체 
+  1) pageScore
+    - pageContext 내장 객체와 같이 page 영역에 저장된 속성값을 읽어옴
+  2) reqeustScopeScore
+    - request 내장 객체와 같이 request 영역에 저장된 속성값을 읽어옴
+  1) sessionScore
+    - session 내장 객체와 같이 session 영역에 저장된 속성값을 읽어옴
+  1) applicationScore
+    - application 내장 객체와 같이 application 영역에 저장된 속성값을 읽어옴
+
+4. 폼(from) 값 처리 
+  1) param
+    - request.getParameter("매개변수명") 동일하게
+      요청 매개변수의 값을 받아옴
+  2) paramValues
+    - request.getParameterValues("매개변수명")과 동일하게 
+      요청 매개변수의 값을 문자열 배열로 받아옴
+    - 다중 선택이 가능한 checkbox를 통해 전달된 폼값을 받을 때 사용
+  3) 
