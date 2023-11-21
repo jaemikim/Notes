@@ -15,7 +15,7 @@
 3. EL에서 4가지 영역 접근하기 위한 내장 객체 
   1) pageScore
     - pageContext 내장 객체와 같이 page 영역에 저장된 속성값을 읽어옴
-  2) reqeustScopeScore
+  2) requestScope
     - request 내장 객체와 같이 request 영역에 저장된 속성값을 읽어옴
   1) sessionScore
     - session 내장 객체와 같이 session 영역에 저장된 속성값을 읽어옴
@@ -30,4 +30,36 @@
     - request.getParameterValues("매개변수명")과 동일하게 
       요청 매개변수의 값을 문자열 배열로 받아옴
     - 다중 선택이 가능한 checkbox를 통해 전달된 폼값을 받을 때 사용
-  3) 
+
+5. 객체 전달하기
+  1) 폼(form)으로는 객체 전송이 불가능함. 이때 영역(scope)을 사용함
+    - 객체를 영역에 저장한 후, 내장 객체의 영역이 공유 특징 이용해 전달하면 됨
+
+6. EL의 쿠키, 헤더값을 읽을 수 있는 내장 객체들
+  1) cookie
+    - 쿠키 읽을 때 사용
+  2) header
+    - request.getHeader(헤더명)와 동일하게 헤더값 읽을 때 사용함
+  3) initParam
+    - web.xml에 설정한 컨텍스트 초기화 매개변수 읽을 때 사용함
+  4) pageContext
+    - jap의 pageContext 내장 객체와 동일한 역할함
+
+7. 컬렉션 사용하기 
+
+8. EL 연산자
+  1) 할당연산자
+    - ${num1 = 7}          <--- 변수 할당 및 즉시 출력
+    - ${num1 = 7; ''}      <--- 변수 할당만 되고 출력 되지 않음
+  2) 산술연산자
+  3) 비교연산자
+  4) 논리연산자
+    - && 또는 and
+    - || 또는 or
+    - ! 또는 not
+  
+
+
+
+  <%-- Jsp 주석으로 코드상에 보이지 않는다. --%>
+  <!-- html 주석으로 내용이 보인다. -->
