@@ -1,0 +1,22 @@
+1. 파일 업로드
+  1) 톰캣 10버전부터 Part API를 사용해 파일 업로드 구현해야 함
+  2) 구현순서
+    - 화면(from) 작성
+    - 테이블 준비
+    - DTO, DAO 구현
+
+2. 화면(form) 작성
+  1) method 속성은 반드시 post 방식 지정
+  2) multipart/form-data
+    - enctype
+      ㆍ폼값을 서버로 전송할 때의 인코딩 방식을 지정하는 속성
+      ㆍ속성값
+        = application/x-www-form-urlencoded
+          - 모든 분자를 서버로 전송하기 전에 인코딩함
+          - 기본값
+        = multipart/form-data
+          - 모든 문자를 인코딩하지 않음
+          - <form> 태그를 통해 파일을 서버로 전송할 때 주로 사용함
+        = text/plain
+          - 공백문자(space)만 "+"기호로 변환하고, 나머지 문자는 인코딩하지 않음
+          -
