@@ -1,0 +1,21 @@
+1. 게시판 구상
+  1) 누구나 회원 인증 없이 글 작성
+    - 작성자는 입력으로 대처
+    - 글쓰기 시 비밀번호 입력 필수
+    - 비밀번호 통해 수정, 삭제 가능    
+  2) 글쓰기 시 파일 첨부 가능
+    - 정해진 용량 이상은 업로드 불가하게 함
+    - 첨부파일을 다운로드 가능하게 함
+
+  3) 요청명(url)명
+       기능        매핑 방법      요청명                   컨트로럴(서블릿)        뷰 경로
+    ----------------------------------------------------------------------------------------------------
+     목록보기       web.xml       /mvcboard/list.do       ListController         /mvcBoard/list.jsp
+     글쓰기         web.xml       /mvcboard/write.do      WriteController        /mvcBoard/write.jsp
+     상세보기       애너테이션     /mvcboard/view.do       ViewController         /mvcBoard/view.jsp
+     비밀번호검증   애너테이션     /mvcboard/pass.do        PassController        /mvcBoard/pass.jsp
+     수정           애너테이션     /mvcboard/edit.do       EditController        /mvcBoard/edit.jsp
+     삭제           애너테이션     없음                    PassController         없음
+     다운로드       애너테이션     /mvcboard/download.do   DownloadController     없음
+
+2. 목록 보기 

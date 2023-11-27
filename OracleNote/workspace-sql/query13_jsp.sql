@@ -221,5 +221,46 @@ VALUES(seq_board_num.nextval, '강아지', '사진', 'pupy.jpg', '20231123', SYS
 
 SELECT * FROM HIFILE;
 
+SELECT * FROM  HIFILE
+ORDER BY ID DESC 
 
+
+/*
+ * mvcboard (모델2 방식, 파일첨부형 게시판 테이블)
+ * ---------------------------------------------------------------------------------------------------
+ * 컬렴명         데이터 타입           null허용         키         기본값          설명
+ * ---------------------------------------------------------------------------------------------------
+ * id			number               N           기본키                       일련번호. 기본키
+ * name         varchar2(50)         N                                      작성자 이름
+ * title	    varchar2(200)		 N				  						제목
+ * content    	varchar2(2000)       N                                      내용
+ * posidate     date                 N                       sysdate        작성일     
+ * ofile        varchar2(200)        Y                                      원본파일(original filename)  
+ * Sfile        varchar2(30)         Y                                      저장된파일명(saved filename)
+ * downcount    number               N                             0        다운로드 회수
+ * pass         varchar2(50)         N                                      비밀번호 
+ * visitcount   number               N                             0        조회수                         
+ */
+
+CREATE TABLE mvcboard
+(
+	id NUMBER PRIMARY KEY 
+	, name varchar2(50) NOT NULL 
+	, title varchar2(200) NOT NULL 
+	, content varchar2(2000)  NOT NULL 
+	, postdate DATE DEFAULT sysdate NOT NULL 
+	, ofile varchar2(200) 
+	, sfile varchar2(30)
+	, dowuncount number(5) DEFAULT 0 NOT NULL 
+	, pass varchar2(50) NOT NULL 
+	, visitcount NUMBER DEFAULT 0 NOT NULL 
+);
+
+SELECT * FROM mvcboard;
+
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이순신', '2023년 12월', '올해 한달 남았습니다....', '0305');
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '류성룔', '2024년 1월', '1월입니다.....', '0305');
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이방원', '2024년 2월', '2월입니다.....', '0305');
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '신사임당', '2024년 3월', '3월입니다.....', '0305');
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이성계', '2024년 4월', '4월입니다....', '0305');
 
