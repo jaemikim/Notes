@@ -257,10 +257,19 @@ CREATE TABLE mvcboard
 );
 
 SELECT * FROM mvcboard;
+SELECT * FROM mvcboard WHERE id = '262';
 
 INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이순신', '2023년 12월', '올해 한달 남았습니다....', '0305');
 INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '류성룔', '2024년 1월', '1월입니다.....', '0305');
 INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이방원', '2024년 2월', '2월입니다.....', '0305');
 INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '신사임당', '2024년 3월', '3월입니다.....', '0305');
 INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, PASS) VALUES(seq_board_num.nextval, '이성계', '2024년 4월', '4월입니다....', '0305');
+
+INSERT INTO HM.MVCBOARD (ID, NAME, TITLE, CONTENT, OFILE, SFILE, PASS) VALUES(seq_board_num.nextval, ?, ?, ?, ?, ?, ?);
+
+UPDATE MVCBOARD  SET VISITCOUNT = VISITCOUNT + 1
+WHERE id = 7;
+
+
+
 
