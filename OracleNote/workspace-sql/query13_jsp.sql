@@ -279,3 +279,25 @@ ROLLBACK;
 UPDATE HM.MVCBOARD SET TITLE='잘가 아주 잘가', NAME='성계야성계',  CONTENT='왜 그렇게 있는거야 ', OFILE='', SFILE='' 
 WHERE ID = '262' AND pass = '0305';
 ROLLBACK;
+
+
+
+
+SELECT * FROM mvchiboard;
+
+CREATE TABLE mvchiboard
+(
+	id NUMBER PRIMARY KEY 
+	, name varchar2(50) NOT NULL 
+	, title varchar2(200) NOT NULL 
+	, content varchar2(2000)  NOT NULL 
+	, postdate DATE DEFAULT sysdate NOT NULL 
+	, ofile varchar2(200) 
+	, sfile varchar2(30)
+	, dowuncount number(5) DEFAULT 0 NOT NULL 
+	, pass varchar2(50) NOT NULL 
+	, visitcount NUMBER DEFAULT 0 NOT NULL 
+);
+
+
+
