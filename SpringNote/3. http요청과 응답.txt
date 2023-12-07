@@ -70,7 +70,47 @@
   3) 개별프로젝트 / WEB-INF /web.xml
     - web app의 개별 설정
     - context(프로젝트)마다 하나씩 있음 
-      
+
+6. 프로토콜(protocol)
+  1) 서로 간의 통신을 위한 약속, 규칙  
+  2) 주고 받을 데이터에 대한 형식을 정의한 것
+
+7. HTTP (Hyper Text Transfer Protocol)
+  1) 단순하고 읽기 쉬움
+    - 텍스트(HTML)기반의 프로토콜
+  2) 상태를 유지하지 않음 (stateless)
+    - 클라이언트 정보를 저장 하지 못함
+    - 보완하기 위해 쿠키 & 세션을 사용
+  3) 확장 가능함
+    - 커스텀 헤더(header) 추가 기능
+
+8. HTTP 메시지 - 응답 메시지
+  1) 상태 코드
+    - 1xx : Informational - 정보 교환이 목적 
+    - 2xx : Success - 성공
+    - 3xx : Redirect - 다른 URL로 재요청
+    - 4xx : Client error - 404 Not Found
+    - 5xx : Server error - 요청은 OK, but 서버 처리중 에러
+  2) HTTP 응답 메시시 형식
+
+9. HTTP 메시지 - 요청 메시지
+  1) 요청 (Request) method
+    - GET 
+      ㆍread (얻어오기)
+      ㆍ요청라인에 쿼리스트링으로 데이터 보냄
+      ㆍ서버의 리소스를 가져오기 위해 설계
+      ㆍURL에 데이터가 노출되므로 보안에 취약
+      ㆍ데이터 공유에 유리 -> 전달에 유리 
+      ㆍex) 검색엔진에서 검색단어 전송에 이용 
+    - POST 
+      ㆍwrite
+      ㆍ서버에 데이터를 올리기 위해 설계(Posting)
+      ㆍ데이터를 요청 메시지의 body에 담아 전송
+      ㆍ보안에 유리(HTTP + TLS(암호화) -> HTTPS)
+      ㆍ데이터 공유에는 불리
+      ㆍex) 글쓰기, 로그인, 회원가입, 파일첨부
+
+
 
 
 getprmiter
