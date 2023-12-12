@@ -6,7 +6,23 @@
      ㆍ일반적으로 요청을 받아서 처리하고 응답하는 역할
   3) 클라이언트 요청/응답 파라미터 관련 어노테이션
     - @RequestMapping(value = 패스)
-      ㆍ클라이언트에서 들어온 요청 value의 패스와 동일하면 해당 클래스나 메서드를 실행
-      ㆍ클래스 단위에서 사용 가능
-      ㆍ메서드 단위에서 사용 가능
-       
+     ㆍ클라이언트에서 들어온 요청 value의 패스와 동일하면 해당 클래스나 메서드를 실행
+     ㆍ클래스 단위에서 사용 가능
+     ㆍ메서드 단위에서 사용 가능
+    
+    - URL패턴 
+     ㆍ*는 여러 글자, **는 하위 경로, ?는 한 글자 
+     ㆍ종류                          URL Pattern                     매칭 URL 예
+        = exact mapping            /login/hello.do           http://localhost/mediasignup/login/hello.do
+        = path mapping             /login/*                  http://localhost/mediasignup/login/
+                                                             http://localhost/mediasignup/login/hello
+                                                             http://localhost/mediasignup/login/hello.do
+                                                             http://localhost/mediasignup/login/test/
+        = extension mapping            *.do                  http://localhost/mediasignup/hi
+                                                             http://localhost/mediasignup/login/test/
+                                                          
+  4) API 개발 관련 어노테이션
+    - @PostMapping
+     ㆍPost 요청을 처리하기 위한 메서드 지정
+    - @GetMapping
+     ㆍGet 요청을 처리하기 위한 메서드 지정
