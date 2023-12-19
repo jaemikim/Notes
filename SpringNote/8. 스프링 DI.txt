@@ -1,0 +1,70 @@
+6. 빈 (Bean)이란?
+  1) JavaBeans
+    - 재사용 가능한 컴포넌트, iv(상태), getter&setter, no-args constructor
+  2) Servlet & JSP Bean
+    - MVC의 Model, EL, scope, JSP container가 관리
+  3) EJB (Enterprise Java Beans)
+    - 복잡한 규칙, EJB container가 관리
+  4) Spring Bean
+    - POJO (Plain Old Java Object), 단순, 독립적, Spring container가 관리 
+
+7. BeanFactory와 ApplicationContext
+  1) Bean
+    - Spring Container가 관리하는 객체 
+  2) Spring Container
+    - Bean 저장소
+    - Bean을 저장, 관리(생성, 소멸, 연결)
+  3) BeanFactory와
+    - Bean을 생성, 연결 등의 기본 기능을 정의 
+  4) ApplicationContext
+    - BeanFactory을 확장해서 여러 기능을 추가 정의
+
+8. ApplicationContext(AC)의 종류
+  - 다양한 종류의 AnnotationContext 구현체 제공
+
+      AC의 종류                   XML                            Java Config
+    ----------------------------------------------------------------------------------------        
+      non-Web      GenericXmlApplicationContext       AnnotationConfigApplicationContext
+       Web           XmlWebApplicationContext         AnnotationConfigWebApplicationContext
+
+9. AC의 설정파일
+  1) web.xml
+    - root-context.xml : new XmlWebApplicationContext() - 부모AC
+      <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring/root-context.xml</param-value>
+      </context-param>
+    
+    - servlet-context.xml : new XmlWebApplicationContext() - 자식AC
+    	<servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+          <param-name>contextConfigLocation</param-name>
+          <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+      </servlet>
+  
+  2) Root AC와 Servlet AC
+    - 자식 AC를 찾은 후 부모 AC를 찾음
+    - 부모 AC는 공통으로 사용하는 Bean을 등록
+    - 자식 AC는 개별적으로 사용하는 Bean을 등록
+
+10. 스프링 설정 파일 생성하기 
+  1) src/main/resources에 파일 생성
+  2) 빈(Bean)의 생성과 초기화 
+    - <bean>을 이용해서 빈을 생성할수 있음
+      - id와 class속성을 가짐
+        - id : 빈을 가리키는 레퍼런스 변수 이름을 명시함
+        - class : 클래스 이름을 명시함
+      - 기존 객체 생성 방법
+        - Car car = new Car();
+      - IoC 컨테이너에서 객체 생성 방법
+        - <bean id="" class="" />
+    - <bean>에는 클래스의 멤버 필드를 나타내는 하위 태그로 <property>가 있음
+      - 필드 초기화 할수 있음
+      - name 속성에 필드 이름 명시함
+      - 데이터 타입이 배열인 경우
+        - <array>를 이용해서 값을 명시함
+      
