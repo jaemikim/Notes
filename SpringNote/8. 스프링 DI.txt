@@ -51,7 +51,7 @@
     - 부모 AC는 공통으로 사용하는 Bean을 등록
     - 자식 AC는 개별적으로 사용하는 Bean을 등록
 
-10. 스프링 설정 파일 생성하기 
+10. 빈의 초기화 
   1) src/main/resources에 파일 생성
   2) 빈(Bean)의 생성과 초기화 
     - <bean>을 이용해서 빈을 생성할수 있음
@@ -62,9 +62,64 @@
         - Car car = new Car();
       - IoC 컨테이너에서 객체 생성 방법
         - <bean id="" class="" />
-    - <bean>에는 클래스의 멤버 필드를 나타내는 하위 태그로 <property>가 있음
+    - <property>를 이용한 빈 초기화 
       - 필드 초기화 할수 있음
+        - setter()를 이용
       - name 속성에 필드 이름 명시함
       - 데이터 타입이 배열인 경우
         - <array>를 이용해서 값을 명시함
-      
+    - <constructor-arg>를 이용한 빈 초기화  
+      - 생성자를 이용
+    
+    - 빈의 초기화       
+      <list></list>
+      <set></set>
+      <map></map
+
+11. @Autowired
+  1) 스프링 DI 애너테이션
+  2) 적용 대상
+    - 인스턴스 변수(iv)
+    - setter()
+    - 메서드
+    - 참조형 매개변수를 가진 생성자
+
+  3) 의존선 주입(DI) 방법
+    - 필드 선언 방법
+    - 세터(setter) 메서드 방식 
+    - 생성자 방식
+      - 스프링 공식
+
+  4) Spring container에서 타입으로 빈을 검색해서 참조 변수에 자동 주입 (DI)
+                         ----------
+    - 검색된 빈이 n개이면, 그 중에 참조변수와 이름이 일치하는 것을 주입
+                 ---                       ---------
+    - 주입 대상이 변수일 때, 검색된 빈이 1개 아니면 예외 발생 
+                 ---                  ---
+    - 주입 대상이 배열일 때, 검색된 빈이 n개라도 예외 발생하지 않음
+                 ---                  ---
+    - @Autowired(required = false) 일때, 주입할 빈을 못찾아도 예외 발생하지 않음
+
+    - String container에서 이름으로 빈을 검색해서 참조 변수에 자동 주입(DI)
+                          -----------
+            - 일치하는 이름의 빈이 없으면, 예외 발생함
+
+12. @Resource
+  1) Spring Container에서 이름으로 빈을 검색해서 참조변수에 자동 주입(DI)
+  2) 일치하는 이름의 빈이 없으면 예외 발생함
+
+13. @Component
+  1) <component-scan>로 @Component가 클래스를 자동 검색해서 빈으로 등록
+  2) @Controller, @service, @Repository, @ControllerAdvice의 메타 애너테이션 
+
+14. @Value, @propertySource
+  1) 
+
+15. 애너테이션 비교
+           스프링 애너테이션                 표준 애너테이션 (JSR-330)
+      --------------------------------------------------------------------------
+      @Autowired                       @Inject            
+      @Qualifier                       @Qualifier, @Named            
+                                       @Resource        스프링에는 이름 검색이 없음
+      @Scope("singleton")              @singleton
+      @Component                       @Named, @ManagedBean                                            
