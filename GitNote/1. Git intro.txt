@@ -1,0 +1,29 @@
+1. git이란
+  1) VCS (Version Control System)
+         ----------------
+  2) git
+    - is just one VCS
+    - Otrer VCS
+      - Subversion, CVS, Mercurial
+    - Linus Torvalds
+    - Coders & Engineer
+    - Governments, Scientists, Writers, Anyone.....
+    - all on my local machine
+    - upload my history to Github to share with others
+  
+  3) Git is Primarily a Terminal Tool
+    - command-line Tool
+    - various git commands
+    - git GUI's 
+
+2. Configuring Git 
+  - git config --global user.name "Tom Cruse"
+    git config --global user.email tom@gmail.com
+
+3. Repository
+  1) Repo 
+    - workspace which tracks and manages files within a folder
+
+4. First Git command  
+  1) git status
+    - give information on the current status of a git repository and its contents
