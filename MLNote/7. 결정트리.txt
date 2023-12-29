@@ -35,4 +35,30 @@
     - class : 연봉
 
 5. 전처리 (범주형 데이터)
-  - 종속변수인 class 
+  1) 종속변수인 class 
+  2) data.describe()   # 통계 정보 출력
+    - object형 변수가 많음
+      - mean, std와 같은 기존 통계적 정보가 모두 NaN로 처리되어 있음
+    - 변수가 5개만 보임
+      - describe()는 object형의 데이터를 제거하고 통계적 수치만 보여줌
+  3) data.describe(include='all')  # object 형이 포함된 통계정보 출력
+    - unique, top, freq 행이 추가되었음
+      - unique :  각 변수에서 가지고 있는 고유한 value의 숫자임
+      - top : 각 변수별로 가장 많이 등장하는 value출력됨
+      - freq : top에 나와있는 value가 해당 변수에서 총 몇 건이지 보여줌
+      - 새로운 추가된 행들은 오로지 object형의 변수들만을 위한 것임
+      - 기존 숫자형 변수들은 NaN으로 처리되어 있음
+  4) 더미 변수로 바꾸어 활용하는 방법 
+    - 값의 종류만큰 새로운 변수들이 생겨남
+      - 꼭 필요하지 않다면 변수 수를 줄일 방법ㅇ르 강구할 필요가 있음. 
+      - 값의 종류가 10개 미만인 변수는 그대로 둠
+      - 값의 종류가 10개 이상인 변수만 확인하여 조치검토해야 함
+        - education, occupation. native-country
+
+      - education 변수 처리 => 삭제
+      - occupation 변수 처리 => 더미 변수로 처리 (변환하면 14개가 생김)
+      - native-country 변수 처리 
+        - united-States 가 압도적으로 큰 비중 차지함
+  
+  5) 결측지 처리 및 더미 변수 확인
+    - 

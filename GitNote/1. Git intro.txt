@@ -27,3 +27,31 @@
 4. First Git command  
   1) git status
     - give information on the current status of a git repository and its contents
+  2) git init 
+    - create a new git repository
+    - git tracks a directory and all nested subdirectories
+    - git is now watching that!
+  3) git commit
+  4) git commit 
+
+5. Committing
+  1) save
+  2) snapshot
+  3) 예 
+   delete team.html
+   modified about.html
+   modified about.css
+   created navbar.html
+   created navbar.css
+   created navbar.js 
+   created logo.jpg
+
+   Working directory ------------
+                               \|/
+                             git add
+                                |
+   Staging Area  <---------------
+                               \|/
+                            git commit                              
+                               \|/
+   Repository  <-----------------

@@ -26,6 +26,9 @@ VALUES('cheonho2', '0305', 'cheonho2', 'cheonho2@gmail.com', '2000-11-22', 'fb',
 DELETE FROM T_USER
 ;
 
-SELECT * FROM T_USER WHERE ID  = 'cheonho3';
+SELECT * FROM T_USER WHERE ID  = 'cheonHo';
 
 DELETE FROM T_USER WHERE id = 'cheonho3';
+
+
+UPDATE T_USER SET PWD='', NAME='', EMAIL='', BIRTH='', SNS='', REQ_DATE='' WHERE ID='';
